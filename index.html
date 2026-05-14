@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نموذج البريف الإبداعي | Post With Passion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #084c3f;
+      --green-soft: #5f8f7f;
+      --cream: #f4efe6;
+      --card: #fffaf1;
+      --mustard: #e6bd51;
+      --text: #17342e;
+      --muted: #6d7b76;
+      --border: rgba(8, 76, 63, 0.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Baloo Bhaijaan 2", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .page {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 32px 0 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: var(--green);
+      font-size: 24px;
+    }
+
+    .tag {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 70px 0 48px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      background: var(--mustard);
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.08;
+      color: var(--green);
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 24px 0 0;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(8, 76, 63, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background: rgba(230, 189, 81, 0.25);
+      border-radius: 50%;
+      top: -50px;
+      left: -40px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 2px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form { padding: 24px 0 80px; }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 30px;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 40px rgba(8, 76, 63, 0.045);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .section small { color: var(--muted); }
+
+    .label-badge {
+      background: rgba(230, 189, 81, 0.25);
+      color: var(--green);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    label {
+      font-weight: 800;
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fffdf8;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(8, 76, 63, 0.08);
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .choice {
+      border: 1px solid var(--border);
+      background: #fffdf8;
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .choice input {
+      width: auto;
+      accent-color: var(--green);
+    }
+
+    .submit-box {
+      background: var(--green);
+      color: white;
+      border-radius: 30px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .submit-box h2 {
+      margin: 0 0 8px;
+      color: white;
+      font-size: 30px;
+    }
+
+    .submit-box p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+    }
+
+    button {
+      border: none;
+      background: var(--mustard);
+      color: var(--green);
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.14);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .submit-box { grid-template-columns: 1fr; }
+      .grid, .choices, .social-grid { grid-template-columns: 1fr; }
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .section-head { flex-direction: column; }
+    }
+  
+.form-message {
+  display:none;
+  margin-top:20px;
+  padding:18px;
+  border-radius:18px;
+  font-weight:700;
+}
+
+.form-message.success{
+  display:block;
+  background:rgba(230,189,81,.18);
+  border:1px solid rgba(230,189,81,.45);
+  color:var(--green);
+}
+
+.form-message.error{
+  display:block;
+  background:rgba(180,42,42,.1);
+  border:1px solid rgba(180,42,42,.28);
+  color:#8f1f1f;
+}
+
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">Post With Passion</div>
+      <div class="tag">نموذج البريف الإبداعي</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">نموذج بريف إبداعي للعميل</div>
+        <h1>دعنا نفهم علامتك التجارية قبل أن نبدأ.</h1>
+        <p>
+          يساعدنا هذا النموذج على جمع أهم المعلومات عن العلامة التجارية، والجمهور، والمنتج، وأهداف الحملة، ونوع المحتوى المطلوب، حتى نستطيع بناء أفكار وتسويق يلامس جمهورك ويحقق نتائج واضحة.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div><strong>نفهم العلامة التجارية</strong><span>الهوية، الرسالة، ونقاط التميز.</span></div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div><strong>نحدد الهدف</strong><span>الوعي، المبيعات، العملاء المحتملون، أو إطلاق منتج.</span></div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div><strong>نبني الفكرة</strong><span>محتوى، UGC، إعلانات، أو حملة متكاملة.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form action="https://formsubmit.co/pwp@postwithpassion.com" method="POST" id="briefForm">
+
+<input type="hidden" name="_subject" value="إجابة جديدة على نموذج البريف الإبداعي">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_autoresponse" value="شكراً لتعبئة نموذج البريف الإبداعي. وصلتنا إجاباتك وسنراجعها قريباً.">
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>01. معلومات العلامة التجارية</h2>
+            <small>عرّفنا على العلامة التجارية بشكل واضح ومختصر.</small>
+          </div>
+          <div class="label-badge">Brand Discovery</div>
+        </div>
+        <div class="grid">
+          <div class="field"><label>اسم العلامة التجارية</label><input type="text" name="اسم العلامة التجارية" required placeholder="مثال: Brand Name" /></div>
+          <div class="field"><label>المجال / النشاط</label><input type="text" name="المجال / النشاط" required placeholder="مطاعم، تجزئة، عقار، تجميل..." /></div>
+          <div class="field"><label>الموقع الإلكتروني</label><input type="url" name="الموقع الإلكتروني" required placeholder="https://" /></div>
+
+          <div class="field full">
+            <label>روابط حسابات التواصل الاجتماعي</label>
+            <div class="social-grid">
+              <div class="field"><label>Instagram</label><input type="url" name="Instagram" required placeholder="https://instagram.com/..." /></div>
+              <div class="field"><label>TikTok</label><input type="url" name="TikTok" required placeholder="https://tiktok.com/@..." /></div>
+              <div class="field"><label>X / Twitter</label><input type="url" name="X / Twitter" required placeholder="https://x.com/..." /></div>
+              <div class="field"><label>Snapchat</label><input type="url" name="Snapchat" required placeholder="https://snapchat.com/..." /></div>
+              <div class="field"><label>LinkedIn</label><input type="url" name="LinkedIn" required placeholder="https://linkedin.com/..." /></div>
+              <div class="field"><label>YouTube</label><input type="url" name="YouTube" required placeholder="https://youtube.com/..." /></div>
+            </div>
+          </div>
+
+          <div class="field full"><label>نبذة عن العلامة التجارية</label><textarea name="نبذة عن العلامة التجارية" required placeholder="اكتب وصفاً مختصراً عن العلامة التجارية، القصة، المنتجات أو الخدمات..."></textarea></div>
+          <div class="field full"><label>ما الذي يميزكم عن المنافسين؟</label><textarea name="ما الذي يميزكم عن المنافسين؟" required placeholder="الجودة، السعر، التجربة، السرعة، الثقة، الموقع..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>02. أهداف المشروع</h2>
+            <small>ما النتيجة التي نعمل للوصول إليها؟</small>
+          </div>
+          <div class="label-badge">Campaign Goal</div>
+        </div>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="زيادة المبيعات" /> زيادة المبيعات</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="زيادة الوعي" /> زيادة الوعي</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="إطلاق منتج" /> إطلاق منتج</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="جمع عملاء محتملين" /> جمع عملاء محتملين</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="زيادة التفاعل" /> زيادة التفاعل</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="زيارات الموقع" /> زيارات الموقع</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="تحسين الصورة الذهنية" /> تحسين الصورة الذهنية</label>
+          <label class="choice"><input type="checkbox" name="أهداف المشروع" value="حملة إعلانية" /> حملة إعلانية</label>
+        </div>
+        <div class="grid" style="margin-top:18px;">
+          <div class="field full"><label>اشرح الهدف بشكل أوضح</label><textarea name="اشرح الهدف بشكل أوضح" placeholder="مثلاً: نريد زيادة الطلبات خلال أسبوع الرواتب / إطلاق فرع جديد / رفع التفاعل على إنستغرام..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>03. الجمهور المستهدف</h2>
+            <small>من الأشخاص الذين نريد الوصول إليهم؟</small>
+          </div>
+          <div class="label-badge">Target Audience</div>
+        </div>
+        <div class="grid">
+          <div class="field"><label>نوع الجمهور المستهدف</label>
+<select name="نوع الجمهور المستهدف">
+<option>أفراد</option>
+<option>شركات</option>
+</select>
+</div>
+
+<div class="field"><label>العمر</label><input type="text" name="العمر" placeholder="مثال: 25 - 40" /></div>
+          <div class="field"><label>الجنس</label><select name="الجنس"><option>الجميع</option><option>رجال</option><option>نساء</option></select></div>
+          <div class="field"><label>المدينة / الدولة</label><input type="text" name="المدينة / الدولة" placeholder="الرياض، جدة، الشرقية..." /></div>
+          <div class="field"><label>الاهتمامات</label><input type="text" name="الاهتمامات" placeholder="مطاعم، فخامة، صحة، تقنية..." /></div>
+
+<div class="field"><label>لغة المحتوى</label>
+<select name="لغة المحتوى">
+<option>العربية</option>
+<option>الإنجليزية</option>
+<option>كلتاهما</option>
+</select>
+</div>
+
+<div class="field"><label>أسلوب اللغة العربية</label>
+<select name="أسلوب اللغة العربية">
+<option>لغة عربية فصحى</option>
+<option>لغة عربية بيضاء</option>
+</select>
+</div>
+          <div class="field full"><label>أسلوب حياتهم ومشكلاتهم</label><textarea name="أسلوب حياتهم ومشكلاتهم" placeholder="كيف يفكرون؟ ما الذي يهمهم؟ ما المشكلة التي يحلها منتجك؟"></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>04. المنتج أو الخدمة</h2>
+            <small>المعلومات الأساسية التي تساعدنا على الكتابة والتصوير بالشكل الصحيح.</small>
+          </div>
+          <div class="label-badge">Offer Details</div>
+        </div>
+        <div class="grid">
+          <div class="field full"><label>ما المنتج أو الخدمة؟</label><textarea name="ما المنتج أو الخدمة؟" required placeholder="اكتب وصف المنتج أو الخدمة..."></textarea></div>
+          <div class="field"><label>السعر</label><input type="text" name="السعر" placeholder="مثال: يبدأ من 99 ريال" /></div>
+          <div class="field"><label>هل يوجد عرض حالي؟</label><input type="text" name="هل يوجد عرض حالي؟" placeholder="خصم، باقة، عرض أسبوع الرواتب..." /></div>
+          <div class="field full"><label>أهم المميزات ونقاط القوة</label><textarea name="أهم المميزات ونقاط القوة" required placeholder="اكتب 3 إلى 5 نقاط رئيسية..."></textarea></div>
+          <div class="field full"><label>ما أكثر اعتراض يأتيكم من العملاء؟</label><textarea name="ما أكثر اعتراض يأتيكم من العملاء؟" placeholder="السعر، الثقة، التوصيل، الجودة، المقارنة مع المنافسين..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>05. صوت العلامة التجارية</h2>
+            <small>كيف نريد أن يشعر الناس تجاه العلامة التجارية؟</small>
+          </div>
+          <div class="label-badge">Tone of Voice</div>
+        </div>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="فاخر" /> فاخر</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="شبابي" /> شبابي</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="عفوي" /> عفوي</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="رسمي" /> رسمي</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="مرح" /> مرح</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="احترافي" /> احترافي</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="محلي سعودي" /> محلي سعودي</label>
+          <label class="choice"><input type="checkbox" name="صوت العلامة التجارية" value="Minimal" /> بسيط</label>
+        </div>
+        <div class="grid" style="margin-top:18px;">
+          <div class="field full"><label>هل توجد كلمات أو أساليب يُمنع استخدامها؟</label><textarea name="هل توجد كلمات أو أساليب يُمنع استخدامها؟" placeholder="مثلاً: لا نستخدم لهجة معينة / لا نذكر الخصم / لا نستخدم وعوداً مباشرة..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>06. المحتوى المطلوب</h2>
+            <small>اختر نوع المحتوى أو الخدمة المطلوبة.</small>
+          </div>
+          <div class="label-badge">Content Scope</div>
+        </div>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="UGC" /> UGC</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="Reels" /> Reels</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="TikTok" /> TikTok</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="صور" /> صور</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="إعلانات ممولة" /> إعلانات ممولة</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="فلوقات" /> فلوقات</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="موقع إلكتروني" /> موقع إلكتروني</label>
+          <label class="choice"><input type="checkbox" name="نوع المحتوى المطلوب" value="مقالات" /> مقالات</label>
+        </div>
+        <div class="grid" style="margin-top:18px;">
+          <div class="field"><label>عدد القطع المطلوبة</label><input type="text" name="عدد القطع المطلوبة" placeholder="مثال: 10 فيديوهات + 15 صورة" /></div>
+          <div class="field"><label>المنصات</label><input type="text" name="المنصات" placeholder="Instagram, TikTok, Snapchat, X..." /></div>
+          <div class="field full"><label>مراجع وأمثلة تعجبكم</label><textarea name="مراجع وأمثلة تعجبكم" placeholder="ضع روابط لفيديوهات، حسابات، حملات، أو أسلوب بصري معين..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>07. الإنتاج والتصوير</h2>
+            <small>تفاصيل تساعدنا على التخطيط للتصوير والتنفيذ.</small>
+          </div>
+          <div class="label-badge">Production</div>
+        </div>
+        <div class="grid">
+          <div class="field"><label>مكان التصوير</label><input type="text" name="مكان التصوير" placeholder="عند العميل، استوديو، موقع خارجي..." /></div>
+          <div class="field"><label>هل المنتج جاهز؟</label><select name="هل المنتج جاهز؟"><option>نعم</option><option>لا</option><option>قيد التجهيز</option></select></div>
+          <div class="field"><label>هل يوجد عارضون أو صناع محتوى؟</label><select name="هل يوجد عارضون أو صناع محتوى؟"><option>نحتاج من الوكالة</option><option>متوفر من العميل</option><option>غير مطلوب</option></select></div>
+          <div class="field"><label>موعد التسليم المطلوب</label><input type="date" name="موعد التسليم المطلوب" min="2026-05-26" /></div>
+          <div class="field full"><label>ملاحظات إنتاجية</label><textarea name="ملاحظات إنتاجية" placeholder="أي تفاصيل عن الموقع، التصاريح، المنتجات، الأشخاص، أو المواعيد..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>08. الإعلانات والقياس</h2>
+            <small>معلومات مهمة إذا كان المشروع مرتبطاً بحملة مدفوعة.</small>
+          </div>
+          <div class="label-badge">Ads & KPIs</div>
+        </div>
+        <div class="grid">
+          <div class="field"><label>الميزانية الإعلانية</label><input type="text" name="الميزانية الإعلانية" placeholder="مثال: 10,000 ريال" /></div>
+          <div class="field"><label>مدة الحملة</label><input type="text" name="مدة الحملة" placeholder="مثال: 14 يوماً" /></div>
+          <div class="field full"><label>هل توجد حملات سابقة؟ وما نتائجها؟</label><textarea name="هل توجد حملات سابقة؟ وما نتائجها؟" placeholder="اكتب أهم النتائج أو التحديات السابقة..."></textarea></div>
+          <div class="field full"><label>كيف نقيس النجاح؟</label><textarea name="كيف نقيس النجاح؟" placeholder="مبيعات، عملاء محتملون، ROAS، مشاهدات، تفاعل، زيارات، حجوزات..."></textarea></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>09. الملفات والموافقات</h2>
+            <small>كل ما يحتاجه الفريق قبل البدء.</small>
+          </div>
+          <div class="label-badge">Assets & Approval</div>
+        </div>
+        <div class="grid">
+          <div class="field full"><label>رابط ملفات العلامة التجارية</label><input type="url" name="رابط ملفات العلامة التجارية" placeholder="Google Drive / Dropbox / WeTransfer" /></div>
+          <div class="field"><label>الشخص المسؤول عن الموافقة</label><input type="text" name="الشخص المسؤول عن الموافقة" required placeholder="الاسم والمنصب" /></div>
+          <div class="field"><label>وسيلة التواصل</label><input type="text" name="وسيلة التواصل" required placeholder="WhatsApp / Email" /></div>
+          <div class="field full"><label>ملاحظات أخيرة</label><textarea name="ملاحظات أخيرة" placeholder="أي شيء مهم يجب أن نعرفه قبل أن نبدأ..."></textarea></div>
+        </div>
+      </section>
+
+      <div class="submit-box">
+        <div>
+          <h2>هل أنتم جاهزون للبدء؟</h2>
+          <p>بعد إرسال النموذج، يراجع فريق Post With Passion التفاصيل ويحوّلها إلى خطة تنفيذية واضحة.</p>
+        </div>
+        <button type="submit">إرسال البريف</button>
+      </div>
+<div id="formMessage" class="form-message"></div>
+    </form>
+
+    <footer>
+      <span>© Post With Passion</span>
+      <span>Creative Brief Form</span>
+    </footer>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const checkboxes = document.querySelectorAll('input[name="نوع المحتوى المطلوب"]');
+
+  function validate() {
+    const oneChecked = Array.from(checkboxes).some(cb => cb.checked);
+    checkboxes.forEach(cb => {
+      cb.required = !oneChecked;
+    });
+  }
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', validate);
+  });
+
+  validate();
+});
+</script>
+
+</body>
+
+
+</html>
